@@ -34,7 +34,7 @@ public class StringLogic
 		
 		int length=findStringLength( inputString );
 		
-		Utility.numberCheck( length , position);
+		Utility.positionCheck( length , position);
 		
 		return inputString.charAt( position ); 
 		
@@ -64,11 +64,11 @@ public class StringLogic
 		
 		int length=findStringLength( inputString );
 		
-		Utility.numberCheck(length, firstIndex);
+		Utility.positionCheck(length, firstIndex);
 		
-		Utility.numberCheck(length, lastIndex);
+		Utility.positionCheck(length, lastIndex);
 		
-		Utility.positionCheck( firstIndex , lastIndex );
+		Utility.checkTwoPositions( firstIndex , lastIndex );
 		
 		return inputString.substring(firstIndex,lastIndex);
 		

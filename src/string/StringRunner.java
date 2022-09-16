@@ -5,6 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import utility.CustomException;
+import utility.Utility;
 
 public class StringRunner 
 {
@@ -157,6 +158,7 @@ public class StringRunner
 			          catch( InputMismatchException ex )
 			  		  {
 			  			System.out.println("Enter Number Only");
+   	    	    	    input.nextLine();
 			  		  }
 			   
 			   }
@@ -287,6 +289,8 @@ public class StringRunner
                       catch( InputMismatchException ex )
 			  		  {
 			  			      System.out.println("Enter Number Only");
+         	    	    	  input.nextLine();
+
 			  		  }
  			      
  			   
@@ -423,6 +427,8 @@ public class StringRunner
                     	      
                     	      int count=input.nextInt();
                     	      
+                    	      Utility.numberCheck( count );
+                    	      
                     	      input.nextLine();
                     	      
                     	      String inputStrings[]=new String[count];
@@ -443,6 +449,8 @@ public class StringRunner
            	         catch( InputMismatchException ex )
 			  	     {
 			  			      System.out.println("Enter Number Only");
+         	    	    	  input.nextLine();
+
 			  		 }
                     
            	
@@ -539,6 +547,8 @@ public class StringRunner
                    	      
                    	      int count=input.nextInt();
                    	      
+                   	      Utility.numberCheck( count );
+                   	      
                    	      input.nextLine();
                    	      
                    	      String inputStrings[]=new String[count];
@@ -566,6 +576,8 @@ public class StringRunner
           	         catch( InputMismatchException ex )
 			  	     {
 			  			      System.out.println("Enter Number Only");
+         	    	    	  input.nextLine();
+
 			  		 }
           	
           	   }     

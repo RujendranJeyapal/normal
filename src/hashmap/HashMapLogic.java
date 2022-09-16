@@ -3,13 +3,11 @@ package hashmap;
 
 import java.util.HashMap;
 
-import utility.CustomException;
-import utility.Utility;
 
 public class HashMapLogic 
 {
 	
-	HashMap<Object,Object> actualMap=new HashMap<>();
+	private HashMap<Object,Object> actualMap=new HashMap<>();
         
 	public int sizeOfMap(  ) 
 	{
@@ -22,6 +20,13 @@ public class HashMapLogic
 	{
 
 		actualMap.put( key , value );
+		
+	}
+	
+	public void addToAbsentKey( Object key,Object value )
+	{
+		
+		actualMap.putIfAbsent( key , value );
 		
 	}
 	
@@ -42,10 +47,67 @@ public class HashMapLogic
 	
 	public Object getValueFromKey( Object key ) 
 	{
-		return actualMap.get(key);
+		
+		return actualMap.get( key );
+		
 	}
 	   
 	
+	public Object getValueIfKeyIsAbsent( Object key , Object defaultValue )
+	{
+		
+		return actualMap.getOrDefault( key , defaultValue );
+		
+	}
 	
+	
+	
+	public void removeKey( Object key )
+	{
+		
+		 actualMap.remove( key );
+		
+	}
+	
+	
+	public void removeKeyIfValueMatch( Object key , Object value )  
+	{
+		
+		actualMap.remove( key , value );
+		
+	}
+	
+	public void replaceValue( Object key , Object newValue )
+	{
+		
+		actualMap.replace( key , newValue );
+		
+	}
+	
+	public void replaceThisValue( Object key , Object oldValue , Object newValue )
+	{
+		
+		actualMap.replace( key , oldValue , newValue ); 
+		
+	}
+	
+	public void addAnotherMap( HashMap< Object , Object > anotherMap )
+	{
+		
+		actualMap.putAll( anotherMap );
+		
+	}
+	
+	public void clearMap()
+	{
+		
+		actualMap.clear();
+		
+	}
+	
+	public HashMap< Object , Object > getActualMap()
+	{
+		return actualMap;
+	}
 	
 }

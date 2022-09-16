@@ -36,8 +36,18 @@ public class Utility
 		
 	}
 	
+	public static void numberCheck( int number ) throws CustomException
+	{
+		
+		if( number<=0  )
+		{
+			throw new CustomException( " Don't enter a negative or zero " );
+		}
+		
+	}
 	
-	public static void numberCheck( int stringLength ,int position ) throws CustomException
+	
+	public static void positionCheck( int stringLength ,int position ) throws CustomException
 	{
 		if( position<0 || position>=stringLength )
 		{
@@ -46,7 +56,7 @@ public class Utility
 	}
 	
 	
-	public static void positionCheck( int position1 ,int position2 ) throws CustomException
+	public static void checkTwoPositions( int position1 ,int position2 ) throws CustomException
 	{
 		if( position1>position2 )
 		{
