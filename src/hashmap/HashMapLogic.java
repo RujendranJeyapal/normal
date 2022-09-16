@@ -16,6 +16,8 @@ public class HashMapLogic
 		
 	}
 	
+	
+	
 	public void addToHashMap( Object key,Object value ) 			
 	{
 
@@ -107,7 +109,24 @@ public class HashMapLogic
 	
 	public HashMap< Object , Object > getActualMap()
 	{
+		
 		return actualMap;
+		
 	}
+	
+	public HashMap< Object , Object > getMapWithKeysValues()
+	{
+		
+		  HashMap< Object , Object > oneMap=new HashMap<>();
+		  
+		  oneMap.put( 1 ,"Ram" );
+		  
+		  oneMap.put( 2 , "Lakshmanan" );
+		  
+		  oneMap.put( 3 , "Barathan" );
+		  
+		  return oneMap;
+	}
+	
 	
 }
