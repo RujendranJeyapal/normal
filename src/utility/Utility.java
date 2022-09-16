@@ -1,7 +1,7 @@
 //$Id$
 package utility;
 
-import java.util.HashMap;
+
 
 public class Utility 
 {
@@ -26,13 +26,16 @@ public class Utility
 		
 	}
 	
-	public static void hashMapCheck( HashMap<Object,Object> actualMap ) throws CustomException
+	public static void indexCheckForArrayList( int size , int index ) throws CustomException
 	{
 		
-		if( actualMap==null )
+		
+		if( index<0 ||  index>=size )
 		{
-		        throw new CustomException( "HashMap is null" );	
+		        throw new CustomException( "Enter the correct Index" );	
 		}
+		
+		
 		
 	}
 	
