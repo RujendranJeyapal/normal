@@ -10,6 +10,19 @@ import utility.Utility;
 
 public class ArrayListRunner 
 {
+	
+	
+	static Object getObject( Scanner input )
+	{
+		System.out.println("Enter the Object(String)");
+		
+		return input.nextLine();
+		
+	}
+	
+	
+	
+	
 
 	public static void main(String[] args) 
 	{
@@ -412,11 +425,8 @@ public class ArrayListRunner
                         	
                            case 10:
                         	   
-                        	          System.out.println("Enter the Object(String)");
-                        	          
-                        	          String inputString10=input.nextLine();
-                        	          
-                        	          int index10=callLogic.getIndexOfObject( inputString10 );
+                        	        
+                        	          int index10=callLogic.getIndexOfObject( getObject( input ) );
                         	          
                         	          if( index10==-1 )
                         	          {
@@ -433,11 +443,9 @@ public class ArrayListRunner
                         	          
                            case 11:
                         	   
-                 	                  System.out.println("Enter the Object(String)");
+                 	                 
                  	          
-                 	                  String inputString11=input.nextLine();
-                 	          
-                 	                  int index11=callLogic.getLastIndexOfObject( inputString11 );
+                 	                  int index11=callLogic.getLastIndexOfObject( getObject( input ) );
                  	          
                  	                  if( index11==-1 )
                  	                  {
@@ -525,12 +533,8 @@ public class ArrayListRunner
                   	         
                           case 14:
                         	  
-                        	  
-                                      System.out.println("Enter the Object(String) to remove");     
-                                      
-                                      String removeString=input.nextLine();
-                                      
-                                      callLogic.removeObject( removeString );
+
+                                      callLogic.removeObject( getObject( input ) );
                         	  
                         	  
                         	      
@@ -539,11 +543,9 @@ public class ArrayListRunner
                         	          
                           case 15:
                         	  
-                        	         System.out.println( "Enter the Object(String) to Check " );
+                        	      
                         	         
-                        	         String checkString=input.nextLine();
-                        	         
-                        	         System.out.println( callLogic.isExist( checkString ) );
+                        	         System.out.println( callLogic.isExist( getObject( input ) ) );
                         	         
                         	         break; 
                         	          

@@ -9,6 +9,37 @@ import utility.Utility;
 
 public class StringRunner 
 {
+	
+	static String getString( Scanner input , String sentence )
+	{
+		System.out.println(sentence);
+		
+		return input.nextLine();
+		
+	}
+	
+	static int getInt( Scanner input , String sentence )
+	{
+		
+        System.out.println(sentence);
+		
+		int result= input.nextInt();
+		
+		input.nextLine();
+		
+		return result;
+		
+	}
+	
+	
+	static char getChar( Scanner input , String sentence )
+	{
+		System.out.println(sentence);
+		
+		return input.nextLine().charAt(0);
+		
+	}
+	
 
 	public static void main(String[] args) 
 	{
@@ -71,14 +102,13 @@ public class StringRunner
 			     while( true )  
 			     {  
 				 
-			           System.out.println("Enter the String to find Length");
-			    
-			           String inputString=input.nextLine();
+			         
 			    
 			           try
 			           {
 			    
-			                 System.out.println( callLogic.findStringLength(inputString)  );
+			                 System.out.println( callLogic.findStringLength( 
+			                		 getString( input , "Enter the String to find Length" ) )  );
 			                 break;
 			           
 			           }		  
@@ -98,14 +128,13 @@ public class StringRunner
 			   
 			   while( true )   
 			   {  
-			          System.out.println("Enter the String to convert char Array");
-			   
-			          String inputString=input.nextLine();
+			       
 			   
 			          try
 			          {
 				   
-			                  char array[]=callLogic.stringToCharArray(inputString);
+			                  char array[]=callLogic.
+			                		  stringToCharArray( getString( input , "Enter the String to convert char Array" )  );
 			  
 			    
 			                  for( char temp:array )
@@ -131,20 +160,16 @@ public class StringRunner
 			   
 			   while( true )
 			   {
-			          System.out.println("Enter the String");
 			         
-			          String inputString=input.nextLine();
 			         
 			          try
 			          {
 			          
-			                 System.out.println("Enter the index to find the letter");
-			       
-			                 int position=input.nextInt();
-                            
-			                 input.nextLine();
+		
 			                 
-			                 System.out.println( callLogic.findTheLetter(inputString, position) );
+			                 System.out.println( 
+			                		 callLogic.findTheLetter( getString( input , "Enter the String" )  ,
+			                				 getInt( input , "Enter the index to find the letter" ) ) );
 			                 
 			                 break;
 			   
@@ -171,20 +196,14 @@ public class StringRunner
 			   
 			   while( true )
 			   {
-			          System.out.println("Enter the String");
-			         
-			          String inputString=input.nextLine();
-			         
-			         
-			          
-			          System.out.println("Enter the letter to find the index");
-			       
-			          char letter=input.nextLine().charAt(0);
+
 			                 
                       try   
                       {
                     	    
-                    	     int position=callLogic.findTheIndex(inputString, letter);
+                    	     int position=callLogic.findTheIndex(
+                    	    		 getString( input , "Enter the String")  ,
+                    	    		  getChar( input , "Enter the letter to find the index" ) );
                     	     
                     	     if( position==-1 )
                     	     {
@@ -215,20 +234,15 @@ public class StringRunner
 			   
 			   while( true )
 			   {
-			          System.out.println("Enter the String");
-			         
-			          String inputString=input.nextLine();
-			         
-			         
-			          
-			          System.out.println("Enter the letter to find the index");
-			       
-			          char letter=input.nextLine().charAt(0);
+			
 			          
                       try   
                       {
                     	    
-                    	     int position=callLogic.findTheLastIndex(inputString, letter);
+                    	     int position=callLogic.findTheLastIndex(
+                    	    		 getString( input , "Enter the String")  ,
+                   	    		  getChar( input , "Enter the letter to find the index" )
+                    	    		 );
                     	     
                     	     if( position==-1 )
                     	     {
@@ -259,24 +273,17 @@ public class StringRunner
             	
                while( true )
  			   {
- 			          System.out.println("Enter the String");
- 			         
- 			          String inputString=input.nextLine();
+ 			        
 
  			          
                       try   
                       {
-                     	    System.out.println("Enter the first index of the string");
-                     	    int firstIndex=input.nextInt();
+                     	
                      	    
-                     	    input.nextLine();
-                     	    
-                     	    System.out.println("Enter the last index of the string");
-                     	    int lastIndex=input.nextInt();
-                     	    
-                     	    input.nextLine();
-                     	    
-                     	    System.out.println(  callLogic.getSubString( inputString,firstIndex,lastIndex )  );
+                     	    System.out.println(  callLogic.getSubString(
+                     	    		getString( input , "Enter the String" ) ,
+                     	    		getInt( input , "Enter the first index of the string"),
+                     	    		getInt( input, "Enter the last index of the string" ) )  );
                      	    
                      	    break;
                      	    
@@ -305,18 +312,13 @@ public class StringRunner
             	
             	while( true )
             	{	
-            	
-            	     System.out.println("Enter  the string");
-            	     
-            	     String inputString=input.nextLine();
-            	     
-            	     System.out.println("Enter the string to check ");
-            	     
-            	     String checkString=input.nextLine();
+
             	     
             	     try 
             	     {
-						      System.out.println( callLogic.startingCheck(inputString, checkString) );
+						      System.out.println( callLogic.startingCheck( 
+						    		  getString( input , "Enter  the string" ),
+						    		  getString( input ,  "Enter the string to check ")) );
 						      break;
 					 } 
             	     catch( CustomException ex )
@@ -337,17 +339,13 @@ public class StringRunner
             	while( true )
             	{	
             	
-            	     System.out.println("Enter  the string");
-            	     
-            	     String inputString=input.nextLine();
-            	     
-            	     System.out.println("Enter the string to check ");
-            	     
-            	     String checkString=input.nextLine();
+            	  
             	     
             	     try 
             	     {
-						      System.out.println( callLogic.endingCheck(inputString, checkString) );
+						      System.out.println( callLogic.endingCheck(getString( 
+						    		  input , "Enter  the string" ),
+						    		  getString( input ,  "Enter the string to check ")) );
 						      break;
 					 } 
             	     catch( CustomException ex )
@@ -367,14 +365,13 @@ public class StringRunner
         	   while( true )
            	   {	
            	
-           	     System.out.println("Enter  the string to convert uppercase");
-           	     
-           	     String inputString=input.nextLine();
+           
         	  
            	     
            	         try 
            	         {
-						      System.out.println( callLogic.toConvertUpper(inputString) );
+						      System.out.println( callLogic.toConvertUpper(
+						    		  getString( input , "Enter  the string to convert uppercase" )) );
 						      break;
 					 } 
            	         catch( CustomException ex )
@@ -394,14 +391,13 @@ public class StringRunner
         	   while( true )
            	   {	
            	
-           	     System.out.println("Enter  the string to convert uppercase");
-           	     
-           	     String inputString=input.nextLine();
+  
         	  
            	     
            	         try 
            	         {
-						      System.out.println( callLogic.toConvertLower(inputString) );
+						      System.out.println( callLogic.toConvertLower(
+						    		 getString( input , "Enter  the string to convert uppercase" ) ) );
 						      break;
 					 } 
            	         catch( CustomException ex )
@@ -423,19 +419,19 @@ public class StringRunner
            	
                      try 
            	         {
-                    	      System.out.println("How many strings you want to concat ");
                     	      
-                    	      int count=input.nextInt();
+                    	      
+                    	      int count=getInt( input, "How many strings you want to concat " );
                     	      
                     	      Utility.numberCheck( count );
                     	      
-                    	      input.nextLine();
+                    	 
                     	      
                     	      String inputStrings[]=new String[count];
                     	      
                     	      for( int i=0;i<count;i++ )
                     	      {
-                    	    	  inputStrings[i]=input.nextLine();
+                    	    	  inputStrings[i]= getString( input,"String "+i+1 ) ;
                     	      }
                     	      
                     	      System.out.println( callLogic.concatStrings( inputStrings,count )  );
@@ -466,22 +462,19 @@ public class StringRunner
         	   while( true )
            	   {	
            	   
-        		     System.out.println("Enter the String");
+
         		     
-        		     String inputString=input.nextLine();
-        		     
-        		     System.out.println("Choose the continuous letters to remove");
-        		     String removeLetters=input.nextLine();
-        		     
-        		     System.out.println("Enter the new letter ");
-        		     
-        		     String newLetters=input.nextLine();
+        
         		   
         		   
                      try 
            	         {
                     	      
-                    	      System.out.println( callLogic.replaceString( inputString,removeLetters,newLetters )  );
+                    	      System.out.println( callLogic.replaceString( 
+                    	    		  getString( input , "Enter the String" ),
+                    	    		  getString( input , "Choose the continuous letters to remove"  ),
+                    	    		  getString( input , "Enter the new letter " ) 
+                    	    		  )  );
 						      break;
 					 } 
            	         catch( CustomException ex )
@@ -502,18 +495,14 @@ public class StringRunner
        	      while( true )
           	  {	
           	   
-       		        System.out.println("Enter the String");
-       		     
-       		        String inputString=input.nextLine();
-       		     
-       		        System.out.println("Choose a letter to split");
-       		        String letter=input.nextLine();
-       		   
+
        		   
                     try 
           	         {
                    	      
-                   	          String array[]=callLogic.splitString( inputString,letter )  ;
+                   	          String array[]=callLogic.splitString( 
+                   	        		  getString( input , "Enter the String" ),
+                   	        		  getString( input , "Choose a letter to split" ) )  ;
                    	          
                    	          for( String temp:array )
                    	          {
@@ -543,13 +532,13 @@ public class StringRunner
           	
                      try 
           	         {
-                   	      System.out.println("How many strings you want to merge ");
+                   
                    	      
-                   	      int count=input.nextInt();
+                   	      int count=getInt( input , "How many strings you want to merge " );
                    	      
                    	      Utility.numberCheck( count );
                    	      
-                   	      input.nextLine();
+                   	     
                    	      
                    	      String inputStrings[]=new String[count];
                    	      
@@ -557,14 +546,12 @@ public class StringRunner
                    	      
                    	      for( int i=0;i<count;i++ )
                    	      {
-                   	    	  inputStrings[i]=input.nextLine();
+                   	    	  inputStrings[i]=getString( input , "String "+i+1 );
                    	      }
                    	      
-                   	      System.out.println("Enter the letters to merge" );
-                	      
-                	      String sympol=input.nextLine();
+
                    	      
-                   	      System.out.println( callLogic.mergeStrings( inputStrings,count,sympol )  );
+                   	      System.out.println( callLogic.mergeStrings( inputStrings,count,getString( input , "Enter the letters to merge"  ) )  );
                    	      
 						  break;
 						  
@@ -595,11 +582,9 @@ public class StringRunner
                      try 
          	         {
                   	      
-                    	  System.out.println("Enter the String to reverse");
+ 
                     	  
-                    	  String inputString=input.nextLine();
-                    	  
-                    	  System.out.println( callLogic.toReverseAString( inputString ) );
+                    	  System.out.println( callLogic.toReverseAString( getString( input , "Enter the String to reverse") ) );
                   	      
 						  break;
 						  
@@ -622,18 +607,14 @@ public class StringRunner
           	
           	while( true )
           	{	
-          	
-          	      System.out.println("Enter the string");
-          	     
-          	      String oneString=input.nextLine();
-          	     
-          	      System.out.println("Enter the string to check ");
-          	     
-          	      String anotherString=input.nextLine();
+
           	     
           	      try 
           	      {
-						  System.out.println( callLogic.isTwoStringsAreEqual( oneString, anotherString ) );
+						  System.out.println( callLogic.isTwoStringsAreEqual(
+								  getString( input , "Enter the string" ), 
+								  getString( input , "Enter the string to check " ) 
+								  ) );
 						  break;
 				  } 
           	      catch( CustomException ex )
@@ -653,17 +634,14 @@ public class StringRunner
             	while( true )
             	{	
             	
-            	      System.out.println("Enter the string");
-            	     
-            	      String oneString=input.nextLine();
-            	     
-            	      System.out.println("Enter the string to check ");
-            	     
-            	      String anotherString=input.nextLine();
+           
             	     
             	      try 
             	      {
-  						  System.out.println( callLogic.isTwoStringsAreEqualsIgnoreCase( oneString, anotherString ) );
+  						  System.out.println( callLogic.isTwoStringsAreEqualsIgnoreCase( 
+  								  getString( input , "Enter the string" ), 
+  								  getString( input , "Enter the string to check " )
+  								  ) );
   						  break;
   				      } 
             	      catch( CustomException ex )
@@ -683,14 +661,12 @@ public class StringRunner
           	while( true )
           	{	
           	
-          	      System.out.println("Enter the string");
-          	     
-          	      String inputString=input.nextLine();
+          	  
 
           	     
           	          try 
           	          {
-						  System.out.println( callLogic.toTrimAString( inputString ) );
+						  System.out.println( callLogic.toTrimAString( getString( input , "Enter the string"  ) ) );
 						  break;
 				      } 
           	          catch( CustomException ex )

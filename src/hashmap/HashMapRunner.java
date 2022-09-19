@@ -9,6 +9,17 @@ import utility.Utility;
 
 public class HashMapRunner 
 {
+	
+	
+	static Object getObject( Scanner input , String type )
+	{
+		System.out.println("Enter the "+type+" (String)");
+		
+		return input.nextLine();
+		
+	}
+	
+	
 
 	public static void main(String[] args) 
 	{
@@ -337,10 +348,8 @@ public class HashMapRunner
 	          	                           
 		          	 case 5:
 		          		
-                                          System.out.println("Enter the value(String) for the null key");
-                                          String value=input.nextLine();
-                                          
-                                          callLogic.addToHashMap( null , value );
+                                    
+                                          callLogic.addToHashMap( null , getObject( input , "value" ) );
 	          	     
                                           break;
 	          	        
@@ -388,118 +397,74 @@ public class HashMapRunner
 		          	                       
 		          	                       
 		          	 case 7:
-		          		                 
-		          		                   System.out.println("Enter the key(String)");
+		          		                
 		          		                   
-		          		                   String key=input.nextLine();
-		          		                   
-		          		                   System.out.println("Enter the value(String)");
-		          		                   
-		          		                   String value1=input.nextLine();
-		          		                   
-		          		                   callLogic.addToAbsentKey( key , value1 );
+		          		                   callLogic.addToAbsentKey( getObject( input , "key" ) , getObject( input , "value" ) );
 		          		 
 		          		                   break;
 		          	      
 		          	 case 8:
 		          		 
-		          		                   System.out.println("Enter the key(String) for check Exist");
+		          		                  
 		          		                   
-		          		                   String key8=input.nextLine();
-		          		                   
-		          		                   System.out.println( callLogic.isKeyExistInHashMap( key8 ) );
+		          		                   System.out.println( callLogic.isKeyExistInHashMap( getObject( input , "key" ) ) );
 		          		                   
 		          		                   break;
 		          		                   
 		          	 case 9:	                   
 		          		 
-		          		                   System.out.println("Enter the value(String) for check Exist");
+		          		                  
 		          		                   
-		          		                   String value9=input.nextLine();
-		          		                   
-		          		                   System.out.println( callLogic.isValueExistInHashMap( value9 ) );
+		          		                   System.out.println( callLogic.isValueExistInHashMap( getObject( input , "value" ) ) );
 		          		                   
 		          		                   break;
 		          		
 		          	 case 10:	                   
 		          		                   
-		          		                   System.out.println( "Enter the key(String)" );
+		          		                 
 		          		                   
-		          		                   String key10=input.nextLine();
-		          		                   
-		          		                   System.out.println( callLogic.getValueFromKey( key10 ) );
+		          		                   System.out.println( callLogic.getValueFromKey( getObject( input , "key" ) ) );
 		          		                   
 		          		                   break;
 		          		 
 		          	 case 11:
-		          		 
-		          		                   System.out.println("Enter the key(String)");
+		          		 	          		                 
 		          		                   
-		          		                   String key11=input.nextLine();
-		          		                   
-		          		                   System.out.println("Enter the Default value");
-		          		                   
-		          		                   String defaultValue=input.nextLine();
-		          		                   
-		          		                   System.out.println( callLogic.getValueIfKeyIsAbsent( key11 , defaultValue ) );
+		          		                   System.out.println( callLogic.getValueIfKeyIsAbsent( 
+		          		                		   getObject( input , "key" ) , getObject( input , "default value" ) ) );
 		          		                   
 		          		                   break;
 		          		 
 		          		                   
 		          	 case 12:
-		          		 
-		          		                   System.out.println("Enter the key(String)");
-		                   
-		                                   String key12=input.nextLine();
+
 		                                   
-		                                   callLogic.removeKey( key12 );
+		                                   callLogic.removeKey( getObject( input , "key" ) );
 		          		 
 		          		                   break;
 		          		  
 		          	 case 13:	                   
-		          		                    
-		          		                   System.out.println("Enter the key(String)");
+
 		          		                   
-		          		                   String key13=input.nextLine();
-		          		                   
-		          		                   System.out.println("Enter the value(String)");
-		          		                   
-		          		                   String value13=input.nextLine();
-		          		                   
-		          		                   callLogic.removeKeyIfValueMatch( key13 , value13 );
+		          		                   callLogic.removeKeyIfValueMatch( getObject( input , "key" ) , getObject( input , "value" ) );
 		          		                   
 		          		                   
 		          		                   break;
 		          		 
 		          	 case 14:
 		          		 
-		          		                   System.out.println("Enter the key(String)");
+
 		          		                   
-		          		                   String key14=input.nextLine();
-		          		                   
-		          		                   System.out.println("Enter the replace value(String)");
-		          		                   
-		          		                   String replaceValue=input.nextLine();
-		          		                   
-		          		                   callLogic.replaceValue( key14 , replaceValue );
+		          		                   callLogic.replaceValue( getObject( input , "key" ) , getObject( input , "value" ) );
 		          		                   
 		          		                   break;
 		          		                   
 		          	 case 15:
 		          		 
-		          		                   System.out.println("Enter the Key(String)");
+		          		                 
 		          		                   
-		          		                   String key15=input.nextLine();
-		          		                   
-		          		                   System.out.println("Enter the old value(String)");
-		          		                   
-		          		                   String oldValue=input.nextLine();
-		          		                   
-		          		                   System.out.println("Enter the new value(String)");
-		          		                   
-		          		                   String newValue=input.nextLine();
-		          		                   
-		          		                   callLogic.replaceThisValue( key15 , oldValue , newValue );
+		          		                   callLogic.replaceThisValue( getObject( input , "key" ) , 
+		          		                		 getObject( input , "old value" ), getObject( input , "new value" ) );
 		          		                   
 		          		                   break;
 		          		
