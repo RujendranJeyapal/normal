@@ -207,7 +207,15 @@ public class ArrayListRunner
                                 	
                                 	
                         	  int  index;
-                                	
+                        	  
+                        	  int size1=callLogic.sizeOfArrayList();
+                                
+                        	  if( size1==0 )
+                        	  {
+                        		  System.out.println("List is empty");
+                        	  }   
+                        	  else
+                        	  {
                                    while( true )	
                                    {	 
                                 		 
@@ -216,7 +224,7 @@ public class ArrayListRunner
 							            {
                                 	
                                      		  index=getInt( input , "Enter the Index" );
-							                 Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , index );
+							                 Utility.indexCheckForList( size1 , index );
 							            
 	                                	     
 							                 break;
@@ -237,7 +245,7 @@ public class ArrayListRunner
                                 
                                     
                                       callLogic.addToArrayListGivenPosition( index , getObject( input ) );
-                                
+                        	  }
                                 	  break;
                                 	  
                                 	  
@@ -246,9 +254,17 @@ public class ArrayListRunner
                           case 4:
                                 	
                                 	
-                                    int index4,number;	
+                                int index4,number;	
                                 	
-                                	
+                                int size2=callLogic.sizeOfArrayList();
+                                
+                                
+                                if( size2==0 )
+                          	    {
+                          		     System.out.println("List is empty");
+                          	    }  
+                                else
+                                {
                                 	
                                     while( true )	
                                     {	 
@@ -258,8 +274,8 @@ public class ArrayListRunner
 							            {
                                 	
                                 	         index4=getInt( input , "Enter the Index" );
-							                 Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , index4);
-							                 input.nextLine();
+							                 Utility.indexCheckForList( size2 , index4);
+							             
 	                                	     
 							                 break;
 							            }  
@@ -296,7 +312,7 @@ public class ArrayListRunner
                                       callLogic.addToArrayListGivenPosition( index4 , number );
                                 
                                 	  
-                                	
+                                }
                                 	  break;
                                 	  
                           case 5:
@@ -311,9 +327,16 @@ public class ArrayListRunner
                           case 6:
                           	
                           	
-                                  int index6;	
+                               int index6;	
                           	
-                          	      
+                          	   int size3=callLogic.sizeOfArrayList();
+                          	   
+                          	 if( size3==0 )
+                       	     {
+                       		     System.out.println("List is empty");
+                       	     }
+                          	 else 
+                          	 {
                           	
                                    while( true )	
                                    {	 
@@ -323,8 +346,8 @@ public class ArrayListRunner
 						                   {
                           	
                           	                  index6=getInt( input , "Enter the Index" );
-						                      Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , index6);
-						                      input.nextLine();
+						                      Utility.indexCheckForList( size3 , index6);
+						                  
                               	     
 						                      break;
 						                   }  
@@ -341,10 +364,10 @@ public class ArrayListRunner
                                    }	
                           
                           
-                          
+                          	 
                                     callLogic.addListToIndexOfAnotherList( index6 , callLogic.getArrayListWithObjects() );
                           
-                          	  
+                          	 }
                           	
                           	  break;    	  
                                 	  
@@ -365,7 +388,7 @@ public class ArrayListRunner
                                 	     try
                                 	     {
                                 	           startingPosition=getInt( input , "Enter the starting position" );
-                                	           Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , startingPosition );
+                                	           Utility.indexCheckForList( callLogic.sizeOfArrayList() , startingPosition );
                                 	           break;
                                 	     }
                                 	     catch (CustomException ex) 
@@ -388,7 +411,7 @@ public class ArrayListRunner
                                 	     try
                                 	     {
                                 	           endingPosition=getInt( input , "Enter the ending position" );
-                                	           Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , endingPosition );
+                                	           Utility.indexCheckForList( callLogic.sizeOfArrayList() , endingPosition );
                                 	           break;
                                 	     }
                                 	     catch (CustomException ex) 
@@ -507,10 +530,7 @@ public class ArrayListRunner
                   	    	  
                   	                        try
                   	                        {   
-                  	                        	
-                  	                           
-                  	                            
-                  	                             callLogic.removePosition( getInt( input , "Enter the index to remove" ) );  ;
+                  	                            callLogic.removePosition( getInt( input , "Enter the index to remove" ) );  ;
                   	                            break;
                   	                  
                   	                        }

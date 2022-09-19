@@ -14,8 +14,10 @@ public class LinkedListLogic
              
 	         private LinkedList<Object> actualList=new LinkedList<>();
 	         
+	         
+	      
 	
-	         public void addToArrayList( Object object[] )
+	         public void addToLinkedList( Object object[] )
 	 	     {
 	 	    	
 	 	    	actualList.addAll( Arrays.asList( object ) ) ;
@@ -27,11 +29,89 @@ public class LinkedListLogic
 	        	 actualList.addFirst( objct );
 	         }
 	         
-	 	     public void addToArrayListGivenPosition( int index , Object object ) 
+	         public void addLastIndex( Object objct )
+	         {
+	        	 actualList.addLast( objct );
+	         }
+	         
+	         
+	         public Object element(  ) throws CustomException
+	         {
+	        	 Utility.emptyCheckForList( actualList );
+	        	 return actualList.element();
+	         }
+	         
+	         public Object peek()
+	         {
+	        	 return actualList.peek();
+	         }
+	         
+	         public Object peekFirst()
+	         {
+	        	 return actualList.peekFirst();
+	         }
+	         
+	         public Object peekLast()
+	         {
+	        	 return actualList.peekLast();
+	         }
+	         
+	         public Object poll()
+	         {
+	        	 return actualList.poll();
+	         }
+	         
+	         
+	         public Object pollFirst()
+	         {
+	        	 return actualList.pollFirst();
+	         }
+	         
+	         public Object pollLast()
+	         {
+	        	 return actualList.pollLast();
+	         }
+	         
+	         
+	         public Object getFirst() throws CustomException
+	         {
+	        	 Utility.emptyCheckForList( actualList );
+	        	 return actualList.getFirst();
+	         }
+	         
+	         public Object getLast() throws CustomException
+	         {
+	        	 Utility.emptyCheckForList( actualList );
+	        	 return actualList.getLast();
+	         }
+	         
+	         public boolean offer( Object object )
+	         {
+	        	 return actualList.offer( object );
+	         }
+	         
+	         public boolean offerFirst( Object object )
+	         {
+	        	 return actualList.offerFirst( object );
+	         }
+	         
+	         
+	         public boolean offerLast( Object object )
+	         {
+	        	 return actualList.offerLast( object );
+	         }
+	         
+	         
+	 	     public void addToLinkedListGivenPosition( int index , Object object ) 
 	 	     {	 
 	 	    	
 	 	    	 actualList.add( index , object );
 	 	    	 
+	 	     }
+	 	     
+	 	     public Object set( int index , Object object )
+	 	     {
+	 	    	 return actualList.set( index , object );
 	 	     }
 	 	     
 	 	     public void addTwoLists( LinkedList<Object> anotherList )
@@ -49,7 +129,7 @@ public class LinkedListLogic
 	 	    	 
 	 	     }
 	 	     
-	 	     public int sizeOfArrayList()
+	 	     public int sizeOfLinkedList()
 	 	     {
 	 	    	 
 	 	    	  
@@ -74,7 +154,7 @@ public class LinkedListLogic
 	 	     
 	 	     public Object getObject( int index ) throws CustomException 
 	 	     {
-	 	    	 Utility.indexCheckForArrayList( sizeOfArrayList() , index );
+	 	    	 Utility.indexCheckForList( sizeOfLinkedList() , index );
 	 	    	 return actualList.get( index );
 	 	    	 
 	 	     }
@@ -100,7 +180,7 @@ public class LinkedListLogic
 	 	     public void removePosition( int index ) throws CustomException
 	 	     {
 	 	    	 
-	 	    	 Utility.indexCheckForArrayList( sizeOfArrayList() , index );
+	 	    	 Utility.indexCheckForList( sizeOfLinkedList() , index );
 	 	    	 
 	 	    	 actualList.remove( index );
 	 	    	 
@@ -129,8 +209,35 @@ public class LinkedListLogic
 	 	    	 
 	 	     }
 	 	     
+	 	     public Object removeFirst() throws CustomException
+	 	     {
+	 	    	 Utility.emptyCheckForList( actualList );
+	 	    	 
+	 	    	 return actualList.removeFirst();
+	 	     }
 	 	     
-	 	     public void clearArrayList()
+	 	     
+	 	     public Object removeLast() throws CustomException
+	 	     {
+	 	    	 Utility.emptyCheckForList( actualList );
+	 	    	 
+	 	    	 return actualList.removeLast();
+	 	     }
+	 	     
+	 	     
+	 	     public boolean removeFirstOccurence( Object object )
+	 	     {
+	 	    	 return actualList.removeFirstOccurrence( object );
+	 	     }
+	 	     
+	 	     public boolean removeLastOccurence( Object object )
+	 	     {
+	 	    	 return actualList.removeLastOccurrence( object );
+	 	     }
+	 	     
+	 	     
+	 	     
+	 	     public void clearLinkedList()
 	 	     {
 	 	    	 actualList.clear();
 	 	     }
@@ -140,7 +247,7 @@ public class LinkedListLogic
 	 	    	 return actualList;
 	 	     }
 	 	     
-	 	     public LinkedList<Object> getArrayListWithObjects( )
+	 	     public LinkedList<Object> getLinkedListWithObjects( )
 	 	     {
 	 	    	 
 	 	    	 LinkedList<Object> oneList=new LinkedList<>();

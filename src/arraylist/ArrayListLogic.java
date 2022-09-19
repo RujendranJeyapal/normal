@@ -69,7 +69,7 @@ public class ArrayListLogic
 	     
 	     public Object getObject( int index ) throws CustomException 
 	     {
-	    	 Utility.indexCheckForArrayList( sizeOfArrayList() , index );
+	    	 Utility.indexCheckForList( sizeOfArrayList() , index );
 	    	 return actualList.get( index );
 	    	 
 	     }
@@ -95,7 +95,7 @@ public class ArrayListLogic
 	     public void removePosition( int index ) throws CustomException
 	     {
 	    	 
-	    	 Utility.indexCheckForArrayList( sizeOfArrayList() , index );
+	    	 Utility.indexCheckForList( sizeOfArrayList() , index );
 	    	 
 	    	 actualList.remove( index );
 	    	 

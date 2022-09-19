@@ -1,7 +1,7 @@
 //$Id$
 package utility;
 
-
+import java.util.List;
 
 public class Utility 
 {
@@ -26,7 +26,7 @@ public class Utility
 		
 	}
 	
-	public static void indexCheckForArrayList( int size , int index ) throws CustomException
+	public static void indexCheckForList( int size , int index ) throws CustomException
 	{
 		
 		
@@ -37,6 +37,14 @@ public class Utility
 		
 		
 		
+	}
+	
+	public static void emptyCheckForList( List<Object>  oneList) throws CustomException
+	{
+		if( oneList.isEmpty() )
+		{
+			throw new CustomException( "LinkedList has no element" );
+		}
 	}
 	
 	public static void numberCheck( int number ) throws CustomException

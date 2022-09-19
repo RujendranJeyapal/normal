@@ -45,29 +45,47 @@ public class LinkedListRunner
         
         while( condition )
         {
-        	
+        	 
         
                 System.out.println("Press 1-->Add Strings to LinkedList\n"
 		                         + "Press 2-->Add Integers to LinkedList\n"
 		                         + "Press 3-->Add String to LinkedList given Position\n"
-		                         + "Press 4-->Add Integer to LinkedList given Position\n"
-		                         + "Press 5-->Add Two Lists\n"
-		                         + "Press 6-->Add Two Lists in Given Index\n"
-		                         + "Press 7-->Get Sub List\n"
-		                         + "Press 8-->Remove the element "
+		                         + "Press 4-->Add String to LinkedList given Position using set() method\n"
+		                         + "Press 5-->Add Integer to LinkedList given Position\n"
+		                         + "Press 6-->Add Two Lists\n"
+		                         + "Press 7-->Add Two Lists in Given Index\n"
+		                         + "Press 8-->Get Sub List\n"
+		                         + "Press 9-->Remove the element "
 		                         + "from the first LinkedList which are present in second Linkedlist\n"
-		                         + "Press 9-->Remove the element from the fist "
+		                         + "Press 10-->Remove the element from the fist "
 		                         + "LinkedList which aren't present in 2nd LinkedList\n"
-		                         + "Press 10-->Get the index of the Given Element\n"
-		                         + "Press 11-->Get the last index of the Given Element\n"
-		                         + "Press 12-->Get the Element of the given index\n"
-		                         + "Press 13-->Remove the index\n"
-		                         + "Press 14-->Remove the Element(String)\n"
-		                         + "Press 15-->Check whether the element is Exist\n"
-		                         + "Press 16-->Add element to the first index of LinkedList\n"
-		                         + "Press 17-->Print the size of LinkedList\n"
-		                         + "Press 18-->Print the LinkedList\n"
-		                         + "Press 19-->Clear the LinkedList\n"
+		                         + "Press 11-->Get the index of the Given Element\n"
+		                         + "Press 12-->Get the last index of the Given Element\n"
+		                         + "Press 13-->Get the Element of the given index\n"
+		                         + "Press 14-->Remove the index\n"
+		                         + "Press 15-->Remove the Element(String)\n"
+		                         + "Press 16-->Check whether the element is Exist\n"
+		                         + "Press 17-->Add element to the first index of LinkedList\n"
+		                         + "Press 18-->Add element to the last index of LinkedList\n"
+		                         + "Press 19-->Add element to the last index of LinkedList using offer method\n"
+		                         + "Press 20-->Add element to the first index of LinkedList using offerFirst method\n"
+		                         + "Press 21-->Add element to the last index of LinkedList using offerLast method\n"
+		                         + "Press 22-->Retrive and doesn't remove the first element using element() method\n"
+		                         + "Press 23-->Retrive and doesn't remove the first element using peek() method\n"
+		                         + "Press 24-->Retrive and doesn't remove the first element using peekFirst() method\n"
+		                         + "Press 25-->Retrive and doesn't remove the last element using peekLast() method\n"
+		                         + "Press 26-->Retrive and remove the first element using poll() method\n"
+		                         + "Press 27-->Retrive and remove the first element using pollFirst() method\n"
+		                         + "Press 28-->Retrive and remove the first element using pollLast() method\n"
+		                         + "Press 29-->Retrive and remove the first element using removeFirst() method\n"
+		                         + "Press 30-->Retrive and remove the last element using removeLast() method\n"
+		                         + "Press 31-->Remove first occurence of object\n"
+		                         + "Press 32-->Remove last occurence of object\n"
+		                         + "Press 33-->get first element\n"
+		                         + "Press 34-->get last element\n"
+		                         + "Press 35-->Print the size of LinkedList\n"
+		                         + "Press 36-->Print the LinkedList\n"
+		                         + "Press 37-->Clear the LinkedList\n"
 		                         + "other-->exit");
                 
                 int option=0;
@@ -118,7 +136,7 @@ public class LinkedListRunner
 		                		        	    array[i]= getObject( input  );
 		                		           }
 		                		           
-		                		           callLogic.addToArrayList( array );
+		                		           callLogic.addToLinkedList( array );
 		                		           
 		                		           break;
 		                		   }
@@ -181,7 +199,7 @@ public class LinkedListRunner
 		                		        	        
 		                		           }
 		                		           
-		                		           callLogic.addToArrayList( array );
+		                		           callLogic.addToLinkedList( array );
 		                		           
 		                		           break;
 		                		   }
@@ -206,7 +224,16 @@ public class LinkedListRunner
                         	
                         	
                 	  int  index;
-                        	
+                	  
+                	  int size=callLogic.sizeOfLinkedList();
+                	  
+                	  
+                	  if( size==0 )
+                	  {
+                		  System.out.println("List is Empty");
+                	  }
+                	  else
+                	  { 	
                            while( true )	
                            {	 
                         		 
@@ -215,50 +242,106 @@ public class LinkedListRunner
 					            {
                         	
                              		  index=getInt( input , "Enter the Index" );
-					                 Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , index );
-					            
-                            	     
-					                 break;
+                             		  
+                             		  
+                             		  
+                             		  
+                             		  
+					                  Utility.indexCheckForList(  size , index );
+					                  break;
 					            }  
 					            catch (CustomException ex) 
 					            {
 					                 System.out.println( ex.getMessage() );
 					            }
 					            catch( InputMismatchException ex )
-	                		        {
+	                		    {
 	                			         System.out.println("Enter Number Only");
 	                			         input.nextLine();
-	                		        }
+	                		    }
                         	 
                           }	
                         
                         
                         
                             
-                              callLogic.addToArrayListGivenPosition( index , getObject( input ) );
-                        
+                              callLogic.addToLinkedListGivenPosition( index , getObject( input ) );
+                	  }
                         	  break;
                         	  
+                        
+                        	  
+                  case 4:   
+                	  
+                	  
+                	    int  index1;
+                  	
+                	    int size1=callLogic.sizeOfLinkedList();
+                	    
+                	    if( size1==0 )
+                  	    {
+                  		     System.out.println("List is Empty");
+                  	    }
+                	    
+                	    else
+                	    {
+                	    
+                            while( true )	
+                            {	 
+                   		 
+                            
+                        	      try 
+				                  {
+                   	
+                        		        index1=getInt( input , "Enter the Index" );
+				                        Utility.indexCheckForList( size1 , index1 );
+				                        break;
+				                  }  
+				                  catch (CustomException ex) 
+				                  {
+				                        System.out.println( ex.getMessage() );
+				                  }
+				                  catch( InputMismatchException ex )
+               		              {
+               			              System.out.println("Enter Number Only");
+               			              input.nextLine();
+               		              }
+                   	 
+                          }	
+                   
+                   
+                   
+                       
+                               System.out.println(  callLogic.set( index1 , getObject( input ) ) );  
+                	    }
+                   	           break;
                         	  
 		        
                         	  
-                  case 4:
+                  case 5:
                         	
                         	
-                            int index4,number;	
+                            int index4=0,number;	
+                        	
+                        	int size2=callLogic.sizeOfLinkedList();
                         	
                         	
-                        	
-                            while( true )	
-                            {	 
+                        	if( size2==0 )
+                      	    {
+                      		     System.out.println("List is Empty");
+                      	    }
+                        	else
+                        	{
+                              while( true )	
+                              {	 
                         		 
                                  
                              	try 
 					            {
                         	
                         	         index4=getInt( input , "Enter the Index" );
-					                 Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , index4);
-					                 input.nextLine();
+					                 Utility.indexCheckForList( size2 , index4);
+					               
                             	     
 					                 break;
 					            }  
@@ -267,13 +350,13 @@ public class LinkedListRunner
 					                 System.out.println( ex.getMessage() );
 					            }
 					            catch( InputMismatchException ex )
-	                		        {
+	                		    {
 	                			         System.out.println("Enter Number Only");
 	                			         input.nextLine();
-	                		        }
+	                		    }
                         	 
-                          }	
-                        
+                                }	
+                        	
                         
                         
                              
@@ -292,28 +375,34 @@ public class LinkedListRunner
                 			          input.nextLine();
                 		        }
                           }  
-                              callLogic.addToArrayListGivenPosition( index4 , number );
+                              callLogic.addToLinkedListGivenPosition( index4 , number );
                         
-                        	  
+                        } 
                         	
                         	  break;
                         	  
-                  case 5:
+                  case 6:
                         	
-                        	  callLogic.addTwoLists( callLogic.getArrayListWithObjects()  );
+                        	  callLogic.addTwoLists( callLogic.getLinkedListWithObjects()  );
                         	
                         	
                         	  break;
                         	  
 		               
                         	  
-                  case 6:
+                  case 7:
                   	
                   	
                           int index6;	
                   	
-                  	      
+                  	      int size6=callLogic.sizeOfLinkedList();
                   	
+                  	     if( size6==0 ) 
+                  	     {
+                  	    	 System.out.println("List is Empty");
+                  	     }
+                  	     else
+                  	     { 
                            while( true )	
                            {	 
                   		 
@@ -322,8 +411,8 @@ public class LinkedListRunner
 				                   {
                   	
                   	                  index6=getInt( input , "Enter the Index" );
-				                      Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , index6);
-				                      input.nextLine();
+				                      Utility.indexCheckForList( size6 , index6);
+				                   
                       	     
 				                      break;
 				                   }  
@@ -339,17 +428,17 @@ public class LinkedListRunner
                   	 
                            }	
                   
+                  	     
                   
-                  
-                            callLogic.addListToIndexOfAnotherList( index6 , callLogic.getArrayListWithObjects() );
-                  
+                            callLogic.addListToIndexOfAnotherList( index6 , callLogic.getLinkedListWithObjects() );
+                  	     }
                   	  
                   	
                   	  break;    	  
                         	  
                         	  
                         	  
-                  case 7:
+                  case 8:
                         	
                          while( true )
                          {
@@ -364,18 +453,18 @@ public class LinkedListRunner
                         	     try
                         	     {
                         	           startingPosition=getInt( input , "Enter the starting position" );
-                        	           Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , startingPosition );
+                        	           Utility.indexCheckForList( callLogic.sizeOfLinkedList() , startingPosition );
                         	           break;
                         	     }
                         	     catch (CustomException ex) 
-						             {
+						         {
 						                 System.out.println( ex.getMessage() );
-						             }
-						             catch( InputMismatchException ex )
-	                		         {
+						         }
+						         catch( InputMismatchException ex )
+	                		     {
 	                			         System.out.println("Enter Number Only");
 	                			         input.nextLine();
-	                		         }
+	                		     }
                         	 
                         	 }    
                         	     
@@ -387,18 +476,18 @@ public class LinkedListRunner
                         	     try
                         	     {
                         	           endingPosition=getInt( input , "Enter the ending position" );
-                        	           Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , endingPosition );
+                        	           Utility.indexCheckForList( callLogic.sizeOfLinkedList() , endingPosition );
                         	           break;
                         	     }
                         	     catch (CustomException ex) 
-						             {
+						         {
 						                 System.out.println( ex.getMessage() );
-						             }
-						             catch( InputMismatchException ex )
-	                		         {
+						         }
+						         catch( InputMismatchException ex )
+	                		     {
 	                			         System.out.println("Enter Number Only");
 	                			         input.nextLine();
-	                		         }
+	                		     }
                         	 
                         	 }
                         	 
@@ -408,28 +497,28 @@ public class LinkedListRunner
                         	         break;
                         	     }  
                         	     catch (CustomException ex) 
-						             {
+						         {
 						                 System.out.println( ex.getMessage() );
-						             }
+						         }
                         	
                        }	
                         	 break;
                         	  
                         	
-                   case 8:  
+                   case 9:  
                 	   
-                	          callLogic.removeAllObjects( callLogic.getArrayListWithObjects() ) ;     
+                	          callLogic.removeAllObjects( callLogic.getLinkedListWithObjects() ) ;     
                 	   
                 	          break;
                    
-                   case 9:
+                   case 10:
                 	   
-                	          callLogic.retainAllObjects( callLogic.getArrayListWithObjects() );
+                	          callLogic.retainAllObjects( callLogic.getLinkedListWithObjects() );
                 	          
                 	          break;
                         
                 	
-                   case 10:
+                   case 11:
                 	   
                 	        
                 	          int index10=callLogic.getIndexOfObject( getObject( input ) );
@@ -447,7 +536,7 @@ public class LinkedListRunner
                 	   
                 	          break;
                 	          
-                   case 11:
+                   case 12:
                 	   
          	                 
          	          
@@ -467,7 +556,7 @@ public class LinkedListRunner
          	                  break;          
                  	  
          	                  
-                   case 12:
+                   case 13:
                 	         
                 	      
                 	        
@@ -483,21 +572,21 @@ public class LinkedListRunner
                 	                  
                 	            }
                 	            catch( CustomException ex )
-		     			            {
-		     			                  System.out.println(ex.getMessage());
-		     			            }
-		                		    catch( InputMismatchException ex )
-		                		    {
-		                			       System.out.println("Enter Number Only");
-		                			       input.nextLine();
-		                		    }
+		     			        {
+		     			              System.out.println(ex.getMessage());
+		     			        }
+		                		catch( InputMismatchException ex )
+		                		{
+		                			  System.out.println("Enter Number Only");
+		                			  input.nextLine();
+		                		}
                 	            
                 	      }
                 	      
                 	         break;
                 	         
                 	         
-                  case 13:
+                  case 14:
                 	   
           	                  
           	        
@@ -529,7 +618,7 @@ public class LinkedListRunner
                 	         
           	         
           	         
-                  case 14:
+                  case 15:
                 	  
 
                               callLogic.removeObject( getObject( input ) );
@@ -539,7 +628,7 @@ public class LinkedListRunner
                 	          break;
           	         
                 	          
-                  case 15:
+                  case 16:
                 	  
                 	      
                 	         
@@ -547,23 +636,254 @@ public class LinkedListRunner
                 	         
                 	         break; 
                 	          
-                        	 
-                   case 16:
+                	         
+                  case 17:
+                	  
+                	         callLogic.addFirstIndex( getObject( input ) );
+                	  
+                	  
+                	         break;
+                       
+                	         
+                  case 18:
+                	  
+                	         callLogic.addLastIndex( getObject( input ) );
+                	         
+                	         break;
+                	         
+                	         
+                  case 19:
+                	  
+                	         System.out.println( callLogic.offer(  getObject( input ) ) );
+                	         
+                	         break;
+                	         
+                  case 20:
+                	  
+                	         System.out.println( callLogic.offerFirst( getObject( input ) ) );
+                	  
+                	         break;
+                	         
+                  case 21:
+                	    
+                	         System.out.println( callLogic.offerLast( getObject( input ) ) );
+                	  
+                	         break;
+                	         
+                  case 22:
+                	  
+                	         try
+                	         {  
+                	  
+                	               System.out.println( callLogic.element() );
+                	         }
+                	         catch( CustomException ex )
+                	         {
+                	        	   System.out.println( ex.getMessage() );
+                	         }
+                	        
+                	         
+                	         break;
+                	 
+                  case 23:
+                	  
+                	         Object result=callLogic.peek();
+                	         
+                	         if( result==null )
+                	         {
+                	        	 System.out.println("List has no element");
+                	         }
+                	         
+                	         else 
+                	         {
+                	              System.out.println( result );	 
+                	         }
+                	  
+                	         break;
+                	   
+                	         
+                  case 24:
+                	     
+                	         Object result1=callLogic.peekFirst();
+         	         
+         	                 if( result1==null )
+         	                 {
+         	        	          System.out.println("List has no element");
+         	                 }
+         	         
+         	                 else 
+         	                 {
+         	                      System.out.println( result1 );	
+                	        
+         	                 }
+         	                 
+                	         break;
+                	         
+                	         
+                  case 25:
+                	  
+                	     
+                	         Object result2=callLogic.peekLast();
+          	         
+  	                         if( result2==null )
+  	                         {
+  	        	                  System.out.println("List has no element");
+  	                         }
+  	                         else 
+  	                         {
+  	                              System.out.println( result2 );	
+         	        
+  	                         }
+  	                 
+         	                 break;   
+         	                 
+                  case 26:
+                	   
+                	         Object result3=callLogic.poll();
+           	         
+                             if( result3==null )
+                             {
+       	                         System.out.println("List has no element");
+                             }
+                             else 
+                             {
+                                 System.out.println( result3 );	
+  	        
+                             }
+                
+  	                         break; 
+                	
+  	                         
+                  case 27:
+               	   
+         	                Object result4=callLogic.pollFirst();
+    	         
+                            if( result4==null )
+                            {
+	                              System.out.println("List has no element");
+                            }
+                            else 
+                            {
+                                  System.out.println( result4 );	
+       
+                            }
+         
+                     
+                            break;          
+         	         
+                            
+                            
+                            
+                  case 28:
+                  	   
+   	                        Object result5=callLogic.pollLast();
+	         
+                           if( result5==null )
+                           {
+                                    System.out.println("List has no element");
+                           }
+                           else 
+                           {
+                                  System.out.println( result5 );	
+ 
+                           }
+   
+                           break;          
+                     
+                           
+                 case 29:          
+                            
+                	           try
+                	           {
+                	        	   
+                                  System.out.println( callLogic.removeFirst() );
+                                  
+                	           }
+                	           catch( CustomException ex )
+                	           {
+                	        	   System.out.println( ex.getMessage() );
+                	           }
+                               
+                               break;
+                               
+                               
+                 case 30:          
+                     
+                	           try
+                	           {
+                	 
+                                   System.out.println( callLogic.removeLast() );
+                                   
+                	           }   
+                	           catch( CustomException ex )
+                	           {
+                	        	   System.out.println( ex.getMessage() );
+                	           }
+                	           
+                              break;     
+                              
+                              
+                 case 31:
+                	 
+                	 
+                	          System.out.println( callLogic.removeFirstOccurence(  getObject( input ) ) );
+                	          
+                	          break;
+                     
+                	          
+                 case 32:
+                	 
+                	 
+       	                     System.out.println( callLogic.removeLastOccurence(  getObject( input ) ) );
+       	          
+       	                     break;          
+                              
+                	         
+                  case 33:
+                	  
+                	         try
+         	                 {   
+         	  
+         	                       System.out.println( callLogic.getFirst() );
+         	                 }
+         	                 catch( CustomException ex )
+         	                 {
+         	        	           System.out.println( ex.getMessage() );
+         	                 }
+                	         
+                	         break;
+                	         
+                	         
+                  case 34:
+                	       
+                	        try
+  	                        {   
+  	  
+  	                               System.out.println( callLogic.getLast() );
+  	                        }
+  	                        catch( CustomException ex )
+  	                        {
+  	        	                   System.out.println( ex.getMessage() );
+  	                        }
+                	  
+                	          break;
+                	         
+                  case 35:
                         	
-                        	  System.out.println( "Size :"+callLogic.sizeOfArrayList() );
+                        	  System.out.println( "Size :"+callLogic.sizeOfLinkedList() );
 		                	  
                         	  break;
                         	  
                         	  
-                   case 17:
+                  case 36:
                         	 
                         	 System.out.println( callLogic.getActualList() );
                         	 
                         	 break;
                         	
-                   case 18:
+                  case 37:
                 	   
-                	         callLogic.clearArrayList();
+                	         callLogic.clearLinkedList();
                 	   
                 	         break;
                         	 
