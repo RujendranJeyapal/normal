@@ -172,7 +172,7 @@ public class LinkedListRunner
 		                		           
 		                		           Utility.numberCheck( count );
 		                		           
-		                		           input.nextLine();
+		                		   
 		                		           
 		                		           Object array[]=new Object[ count ];
 		                		           

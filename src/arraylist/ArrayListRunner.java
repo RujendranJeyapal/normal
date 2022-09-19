@@ -155,8 +155,7 @@ public class ArrayListRunner
         		                		           
         		                		           Utility.numberCheck( count );
         		                		           
-        		                		           input.nextLine();
-        		                		           
+        		                		         
         		                		           Object array[]=new Object[ count ];
         		                		           
         		                		           System.out.println("Enter the Integers");
