@@ -431,7 +431,7 @@ public class StringRunner
                     	      
                     	      for( int i=0;i<count;i++ )
                     	      {
-                    	    	  inputStrings[i]= getString( input,"String "+i+1 ) ;
+                    	    	  inputStrings[i]= getString( input,"String "+(i+1) ) ;
                     	      }
                     	      
                     	      System.out.println( callLogic.concatStrings( inputStrings,count )  );
@@ -546,7 +546,7 @@ public class StringRunner
                    	      
                    	      for( int i=0;i<count;i++ )
                    	      {
-                   	    	  inputStrings[i]=getString( input , "String "+i+1 );
+                   	    	  inputStrings[i]=getString( input , "String "+(i+1) );
                    	      }
                    	      
 
