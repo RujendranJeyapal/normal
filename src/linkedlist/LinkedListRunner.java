@@ -18,6 +18,19 @@ public class LinkedListRunner
 		
 	}
 	
+	
+	static int getInt( Scanner input , String sentence )
+	{
+		
+        System.out.println(sentence);
+		
+		int result= input.nextInt();
+		
+		input.nextLine();
+		
+		return result;
+		
+	}
 
 	public static void main(String[] args) 
 	{
@@ -58,8 +71,8 @@ public class LinkedListRunner
 		                         + "other-->exit");
                 
                 int option=0;
-  		
-  	 	
+          		
+          	 	
 		        while( true )
 		        {
 	     	            try
@@ -86,23 +99,23 @@ public class LinkedListRunner
 		                	{
 		                		
 		                		
-		                		   System.out.println( "How many Strings you want" );
+		                	
 		                		   
 		                		   try
 		                		   {
-		                		           int count=input.nextInt();
+		                		           int count=getInt( input , "How many Strings you want" );
 		                		           
 		                		           Utility.numberCheck( count );
 		                		           
-		                		           input.nextLine();
+		                		          
 		                		           
-		                		           String array[]=new String[ count ];
+		                		           Object array[]=new Object[ count ];
 		                		           
-		                		           System.out.println("Enter the Strings");
+		                		         
 		                		           
 		                		           for( int i=0;i<count;i++ )
 		                		           {
-		                		        	    array[i]=input.nextLine();
+		                		        	    array[i]= getObject( input  );
 		                		           }
 		                		           
 		                		           callLogic.addToArrayList( array );
@@ -133,17 +146,17 @@ public class LinkedListRunner
 		                	{
 		                		
 		                		
-		                		   System.out.println( "How many Integers you want" );
+		                		 
 		                		   
 		                		   try
 		                		   {
-		                		           int count=input.nextInt();
+		                		           int count=getInt( input , "How many Integers you want" );
 		                		           
 		                		           Utility.numberCheck( count );
 		                		           
 		                		           input.nextLine();
 		                		           
-		                		           Integer array[]=new Integer[ count ];
+		                		           Object array[]=new Object[ count ];
 		                		           
 		                		           System.out.println("Enter the Integers");
 		                		           
@@ -155,7 +168,7 @@ public class LinkedListRunner
 		                		        	           try
 		                		        	           {
 		                		        	   
-		                		        	                  array[i]=input.nextInt();
+		                		        	                  array[i]=getInt( input , "Integer "+(i+1) );
 		                		        	                  
 		                		        	                  break;
 		                		        	           }
@@ -191,9 +204,8 @@ public class LinkedListRunner
 		                	  
                   case 3:
                         	
-                        	int index;	
                         	
-                        	System.out.println("Enter the Index"); 
+                	  int  index;
                         	
                            while( true )	
                            {	 
@@ -202,9 +214,9 @@ public class LinkedListRunner
                              	try 
 					            {
                         	
-                        	         index=input.nextInt();
-					                 Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , index);
-					                 input.nextLine();
+                             		  index=getInt( input , "Enter the Index" );
+					                 Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , index );
+					            
                             	     
 					                 break;
 					            }  
@@ -222,8 +234,7 @@ public class LinkedListRunner
                         
                         
                         
-                         
-                              
+                            
                               callLogic.addToArrayListGivenPosition( index , getObject( input ) );
                         
                         	  break;
@@ -236,7 +247,7 @@ public class LinkedListRunner
                         	
                             int index4,number;	
                         	
-                        	System.out.println("Enter the Index"); 
+                        	
                         	
                             while( true )	
                             {	 
@@ -245,7 +256,7 @@ public class LinkedListRunner
                              	try 
 					            {
                         	
-                        	         index4=input.nextInt();
+                        	         index4=getInt( input , "Enter the Index" );
 					                 Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , index4);
 					                 input.nextLine();
                             	     
@@ -265,14 +276,14 @@ public class LinkedListRunner
                         
                         
                         
-                              System.out.println("Enter the Integer");
+                             
                         
                           while( true )    
                           {
                         	  
                                 try
                                 {
-                                      number=input.nextInt();
+                                      number=getInt( input , "Enter the Integer" );
                                       break;
                                 }  
                                 catch( InputMismatchException ex )
@@ -301,7 +312,7 @@ public class LinkedListRunner
                   	
                           int index6;	
                   	
-                  	       System.out.println("Enter the Index"); 
+                  	      
                   	
                            while( true )	
                            {	 
@@ -310,7 +321,7 @@ public class LinkedListRunner
                        	           try 
 				                   {
                   	
-                  	                  index6=input.nextInt();
+                  	                  index6=getInt( input , "Enter the Index" );
 				                      Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , index6);
 				                      input.nextLine();
                       	     
@@ -345,14 +356,14 @@ public class LinkedListRunner
                     	   
                         	 int startingPosition,endingPosition;
                          	
-                        	 System.out.println("Enter the starting position");
+                        	
                         	 
                         	 while( true )
                         	 {	 
                         		 
                         	     try
                         	     {
-                        	           startingPosition=input.nextInt();
+                        	           startingPosition=getInt( input , "Enter the starting position" );
                         	           Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , startingPosition );
                         	           break;
                         	     }
@@ -368,14 +379,14 @@ public class LinkedListRunner
                         	 
                         	 }    
                         	     
-                        	 System.out.println("Enter the ending position");
+                        	
                         	 
                         	 while( true )
                         	 {	 
                         		 
                         	     try
                         	     {
-                        	           endingPosition=input.nextInt();
+                        	           endingPosition=getInt( input , "Enter the ending position" );
                         	           Utility.indexCheckForArrayList( callLogic.sizeOfArrayList() , endingPosition );
                         	           break;
                         	     }
@@ -420,8 +431,7 @@ public class LinkedListRunner
                 	
                    case 10:
                 	   
-                	       
-                	          
+                	        
                 	          int index10=callLogic.getIndexOfObject( getObject( input ) );
                 	          
                 	          if( index10==-1 )
@@ -439,7 +449,7 @@ public class LinkedListRunner
                 	          
                    case 11:
                 	   
-         	                
+         	                 
          	          
          	                  int index11=callLogic.getLastIndexOfObject( getObject( input ) );
          	          
@@ -458,23 +468,17 @@ public class LinkedListRunner
                  	  
          	                  
                    case 12:
-                	   
-                	         System.out.println("Enter the index");
                 	         
-                	         int index12;
+                	      
                 	        
                 	      while( true )
                 	      {
                 	    	  
                 	            try
                 	            {                     	         
-                	                 index12=input.nextInt();
                 	                 
-                	                 
-                	                  
-                	                 
-                	                  
-                	                  System.out.println( callLogic.getObject( index12 )  );
+
+                	                  System.out.println( callLogic.getObject( getInt( input , "Enter the index" ) )  );
                 	                  break;
                 	                  
                 	            }
@@ -495,9 +499,7 @@ public class LinkedListRunner
                 	         
                   case 13:
                 	   
-          	                   System.out.println("Enter the index to remove");
-          	         
-          	                   int index13;
+          	                  
           	        
           	                   while( true )
           	                   {
@@ -505,9 +507,9 @@ public class LinkedListRunner
           	                        try
           	                        {   
           	                        	
-          	                            index13=input.nextInt();
+          	                           
           	                            
-          	                             callLogic.removePosition( index13 );  ;
+          	                             callLogic.removePosition( getInt( input , "Enter the index to remove" ) );  ;
           	                            break;
           	                  
           	                        }
@@ -529,9 +531,7 @@ public class LinkedListRunner
           	         
                   case 14:
                 	  
-                	  
-                           
-                              
+
                               callLogic.removeObject( getObject( input ) );
                 	  
                 	  
@@ -541,33 +541,27 @@ public class LinkedListRunner
                 	          
                   case 15:
                 	  
+                	      
                 	         
-                	         
-                	         System.out.println( callLogic.isExist( getObject( input )) );
+                	         System.out.println( callLogic.isExist( getObject( input ) ) );
                 	         
                 	         break; 
                 	          
-                	         
-                	
-                  case 16:
-                	  
-                	        callLogic.addFirstIndex( getObject( input )  );
-                	         
                         	 
-                   case 17:
+                   case 16:
                         	
                         	  System.out.println( "Size :"+callLogic.sizeOfArrayList() );
 		                	  
                         	  break;
                         	  
                         	  
-                   case 18:
+                   case 17:
                         	 
                         	 System.out.println( callLogic.getActualList() );
                         	 
                         	 break;
                         	
-                   case 19:
+                   case 18:
                 	   
                 	         callLogic.clearArrayList();
                 	   

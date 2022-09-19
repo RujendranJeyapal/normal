@@ -19,6 +19,19 @@ public class HashMapRunner
 		
 	}
 	
+	static int getInt( Scanner input , String sentence )
+	{
+		
+        System.out.println(sentence);
+		
+		int result= input.nextInt();
+		
+		input.nextLine();
+		
+		return result;
+		
+	}
+	
 	
 
 	public static void main(String[] args) 
@@ -88,10 +101,10 @@ public class HashMapRunner
 		          	    	       try
 		          	    	       {
 		          	    	  
-		          	    	               System.out.println(" Howmany Keys( Integers ) and Values( Integers ) "
-		          	    	               		+ " pair to you want to put Map ");
+		          	    	             
 		          	    	      
-		          	    	               int count=input.nextInt();
+		          	    	               int count=getInt( input , " Howmany Keys( Integers ) and Values( Integers ) "
+			          	    	               		+ " pair to you want to put Map " );
 		          	    	               
 		          	    	                Utility.numberCheck( count );
 		          	    	  
@@ -103,11 +116,11 @@ public class HashMapRunner
 		          	    	            	   while( true )
 		          	    	            	   {
 		          	    	            		   
-		          	    	            	      System.out.println( "Enter the Key" );
+		          	    	            	      
 		          	    	            	      
 		          	    	            	      try
 		          	    	            	      {
-		          	    	            	          key=input.nextInt();
+		          	    	            	          key=getInt( input ,  "Enter the Key" );
 		          	    	            	          break;
 		          	    	            	      }
 		          	    	            	      catch( InputMismatchException ex )
@@ -122,11 +135,11 @@ public class HashMapRunner
 		          	    	            	   while( true )
 		          	    	            	   {
 		          	    	            		   
-		          	    	            	      System.out.println( "Enter the Value" );
+		          	    	            	    
 		          	    	            	      
 		          	    	            	      try
 		          	    	            	      {
-		          	    	            	         value=input.nextInt();
+		          	    	            	         value=getInt( input , "Enter the Value"  );
 		          	    	            	         break;
 		          	    	            	      }
 		          	    	            	      catch( InputMismatchException ex )
@@ -171,32 +184,23 @@ public class HashMapRunner
 		          	    	       try
 		          	    	       {
 		          	    	  
-		          	    	               System.out.println(" Howmany Keys( String ) and Values( String )  "
-		          	    	               		+ "pair to you want to put Map ");
+		          	    	              
 		          	    	      
-		          	    	               int count=input.nextInt();
+		          	    	               int count=getInt( input , " Howmany Keys( Integers ) and Values( Integers ) "
+			          	    	               		+ " pair to you want to put Map " );
 		          	    	               
 		          	    	             
 		          	    	               Utility.numberCheck( count );
 		          	    	               
-		          	    	               input.nextLine();
+		          	    	           
 		          	    	               
 		          	    	  
 		          	    	               for( int i=0;i<count;i++ )
 		          	    	               {
 		          	    	            	      
-		          	    	            	      System.out.println( "Enter the Key" );
-		          	    	            	      
-		          	    	            	     
-		          	    	            	      String key=input.nextLine();
-		          	    	            	  
-		          	   
-		          	    	            	      System.out.println( "Enter the Value" );
-		          	    	            	      
-		          	    	            	     
-		          	    	            	      String value=input.nextLine();
+		          	    	            	    
 		         
-		          	    	            	      callLogic.addToHashMap( key , value );
+		          	    	            	      callLogic.addToHashMap( getObject( input , "key" ) , getObject( input , "value" ) );
 		          	    	            	   
 		          	    	               }
 		          	    	                
@@ -223,10 +227,10 @@ public class HashMapRunner
 	          	    	       try
 	          	    	       {
 	          	    	  
-	          	    	               System.out.println(" Howmany Keys( Integers ) and Values( String ) "
-	          	    	               		+ " pair to you want to put Map ");
+	          	    	          
 	          	    	      
-	          	    	               int count=input.nextInt();
+	          	    	               int count=getInt( input , " Howmany Keys( Integers ) and Values( String ) "
+		          	    	               		+ " pair to you want to put Map "  );
 	          	    	               
 	          	    	               Utility.numberCheck( count );
 	          	    	  
@@ -238,11 +242,11 @@ public class HashMapRunner
 	          	    	            	   while( true )
 	          	    	            	   {
 	          	    	            		   
-	          	    	            	      System.out.println( "Enter the Key" );
+	          	    	            	   
 	          	    	            	      
 	          	    	            	      try
 	          	    	            	      {
-	          	    	            	          key=input.nextInt();
+	          	    	            	          key=getInt( input ,  "Enter the Key"  );
 	          	    	            	          break;
 	          	    	            	      }
 	          	    	            	      catch( InputMismatchException ex )
@@ -253,13 +257,13 @@ public class HashMapRunner
 	          	    	            	      
 	          	    	            	   }    
 	          	    	            	      
-	          	    	            	   input.nextLine();
+	          	    	            	
    
-	          	    	            	   System.out.println( "Enter the Value" );
+	          	    	            	 
 
-	          	    	            	   String value=input.nextLine();
+	          	    	            	  
 
-	          	    	            	   callLogic.addToHashMap( key , value );
+	          	    	            	   callLogic.addToHashMap( key , getObject( input , "value" ) );
 	          	    	            	   
 	          	    	               }
 	          	    	                
@@ -286,32 +290,31 @@ public class HashMapRunner
 	          	    	       try
 	          	    	       {
 	          	    	  
-	          	    	               System.out.println(" Howmany Keys( String ) and Values( Integer ) "
-	          	    	               		+ " pair to you want to put Map ");
+	          	    	            
 	          	    	      
-	          	    	               int count=input.nextInt();
+	          	    	               int count=getInt( input ,  " Howmany Keys( String ) and Values( Integer ) "
+		          	    	               		+ " pair to you want to put Map ");
 	          	    	               
 	          	    	               Utility.numberCheck( count );
 	          	    	  
-	          	    	               input.nextLine();
 	          	    	               
 	          	    	               for( int i=0;i<count;i++ )
 	          	    	               {
 	          	    	            	   
 	          	    	            	   int value;
 	          	    	            	   
-	          	    	            	   System.out.println( "Enter the Key" );
+	          	    	            	   
 	          	    	            	      
-	          	    	            	   String key=input.nextLine();
+	          	    	            	   Object key=getObject( input , "key" );
 	          	    	            	   
 	          	    	            	   while( true )
 	          	    	            	   {
 
-	          	    	            	      System.out.println( "Enter the Value" );
+	          	    	            	      
 	          	    	            	      
 	          	    	            	      try
 	          	    	            	      {
-	          	    	            	          value=input.nextInt();
+	          	    	            	          value=getInt( input , "Enter the Value" );
 	          	    	            	          break;
 	          	    	            	      }
 	          	    	            	      catch( InputMismatchException ex )
@@ -322,7 +325,7 @@ public class HashMapRunner
 	          	    	            	      
 	          	    	            	   }    
                                            
-	          	    	            	   input.nextLine();
+	          	    	            	
 	          	    	            	   
 	          	    	            	   callLogic.addToHashMap( key , value );
 	          	    	            	   
@@ -361,21 +364,20 @@ public class HashMapRunner
 		          		           try
 		          		           {
 		          		 
-		          		                   System.out.println("How many keys to you want for the null values");
 		          		                   
-		          		                   int count=input.nextInt();
+		          		                   
+		          		                   int count=getInt( input , "How many keys to you want for the null values" );
 		          		                   
 		          		                   Utility.numberCheck( count );
 		          		                   
-		          		                   input.nextLine();
+		          		                
 		          		                   
 		          		                   for( int i=0;i<count;i++ )
 		          		                   {
 		          		                	    
-		          		                	     System.out.println("Enter the key(String)");
-		          		                	     String key=input.nextLine();
+		          		               
 		          		                	     
-		          		                	     callLogic.addToHashMap( key , null );
+		          		                	     callLogic.addToHashMap( getObject( input , "key" ) , null );
 		          		                	   
 		          		                   }
 		          		                   
