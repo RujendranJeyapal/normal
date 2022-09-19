@@ -11,7 +11,7 @@ import utility.Utility;
 public class ArrayListLogic 
 {
           
-	     ArrayList<Object> actualList=new ArrayList<>();
+	     private ArrayList<Object> actualList=new ArrayList<>();
 	     
 	     
 	     public void addToArrayList( Object object[] )
