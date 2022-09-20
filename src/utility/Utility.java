@@ -3,6 +3,8 @@ package utility;
 
 import java.util.List;
 
+import java.util.Collection;
+
 public class Utility 
 {
 
@@ -39,11 +41,24 @@ public class Utility
 		
 	}
 	
+	
+	public static void emptyCheckForCollection( Collection<Object> collection , String collectionName ) throws CustomException
+    {
+   	 
+   	 if( collection.isEmpty() )
+   	 {
+   		 throw new CustomException( collectionName+" is Empty" );
+   	 }
+   	 
+    }
+	
+	
+	
 	public static void emptyCheckForList( List<Object>  oneList) throws CustomException
 	{
 		if( oneList.isEmpty() )
 		{
-			throw new CustomException( "LinkedList has no element" );
+			throw new CustomException( "List has no element" );
 		}
 	}
 	

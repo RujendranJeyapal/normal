@@ -4,6 +4,7 @@ package stack;
 import java.util.Stack;
 
 import utility.CustomException;
+import utility.Utility;
 
 public class StackLogic 
 {
@@ -12,15 +13,7 @@ public class StackLogic
 	     Stack<Object> actualStack=new Stack<>();
 	
 	     
-	     private void emptyCheck() throws CustomException
-	     {
-	    	 
-	    	 if( isStackEmpty() )
-	    	 {
-	    		 throw new CustomException( "Stack is Empty" );
-	    	 }
-	    	 
-	     }
+	     
 	     
 	     
 	     public Object push( Object object )  
@@ -31,13 +24,13 @@ public class StackLogic
 	     
 	     public Object peek() throws CustomException
 	     {
-	    	 emptyCheck();
+	    	 Utility.emptyCheckForCollection( actualStack , "Stack" );
 	    	 return actualStack.peek();
 	     }
 	     
 	     public Object pop() throws CustomException
 	     {
-	    	 emptyCheck();
+	    	 Utility.emptyCheckForCollection( actualStack , "Stack" );
 	    	 return actualStack.pop();
 	     }
 	

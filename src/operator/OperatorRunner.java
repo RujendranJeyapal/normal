@@ -24,7 +24,8 @@ public class OperatorRunner
 		while( true )
 	    {
 			
-			System.out.println("Enter the first Number");
+			    System.out.println("Enter the first Number");
+			    
             	try
 	            {
             		firstNo=input.nextInt();
@@ -47,7 +48,8 @@ public class OperatorRunner
   	    while( true )
 	    {
   	    	
-  	    	System.out.println("Enter the second Number");
+  	         	System.out.println("Enter the second Number");
+  	         	
            	    try
 	            {
            	       secondNo=input.nextInt();
