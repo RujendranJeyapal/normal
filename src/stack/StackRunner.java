@@ -11,7 +11,7 @@ public class StackRunner
 {
 
 	
-	static Object getObject( Scanner input  )
+	static Object getString( Scanner input  )
 	{
 		System.out.println("Enter the Object(String)");
 		
@@ -83,7 +83,7 @@ public class StackRunner
 			                  input.nextLine();
 		                }
 		  
-		        }	
+		         }	
 		                   input.nextLine();	
 		                   
 		                   
@@ -156,7 +156,7 @@ public class StackRunner
 
 				                		               for( int i=0;i<count;i++ )
 				                		               {
-				                		            	   callLogic.push( getObject( input  ) );
+				                		            	   callLogic.push( getString( input  ) );
 				                		               }
 				                		           
 
@@ -219,7 +219,7 @@ public class StackRunner
 		                    	          
 		                     case 6:
 		                    	 
-		                    	          int result=callLogic.searchObject(  getObject( input ) ) ;
+		                    	          int result=callLogic.searchObject(  getString( input ) ) ;
 		                    	 
 		                    	          if( result==-1 )
 		                    	          {

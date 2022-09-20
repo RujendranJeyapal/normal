@@ -3,6 +3,7 @@ package linkedlist;
 
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -114,18 +115,18 @@ public class LinkedListLogic
 	 	    	 return actualList.set( index , object );
 	 	     }
 	 	     
-	 	     public void addTwoLists( LinkedList<Object> anotherList )
+	 	     public void addTwoLists( Collection<Object> collection )
 	 	     {
 	 	    	 
-	 	    	 actualList.addAll( anotherList );
+	 	    	 actualList.addAll( collection );
 	 	    	 
 	 	     }
 	 	     
-	 	     public void addListToIndexOfAnotherList( int index , LinkedList<Object> anotherList )  
+	 	     public void addListToIndexOfAnotherList( int index , Collection<Object> collection )  
 	 	     {
 	 	    	
 	 	    	 
-	 	    	 actualList.addAll( index , anotherList );
+	 	    	 actualList.addAll( index , collection );
 	 	    	 
 	 	     }
 	 	     
@@ -195,17 +196,17 @@ public class LinkedListLogic
 	 	    	
 	 	     }
 	 	     
-	 	     public void removeAllObjects(  LinkedList< Object > anotherList )  
+	 	     public void removeAllObjects(  Collection< Object > collection )  
 	 	     {
 	 	    	 
-	 	    	 actualList.removeAll( anotherList );
+	 	    	 actualList.removeAll( collection );
 	 	    	 
 	 	     }
 	 	     
-	 	     public void retainAllObjects(  LinkedList< Object > anotherList )  
+	 	     public void retainAllObjects(  Collection< Object > collection )  
 	 	     {
 	 	    	 
-	 	    	 actualList.retainAll( anotherList );
+	 	    	 actualList.retainAll( collection );
 	 	    	 
 	 	     }
 	 	     

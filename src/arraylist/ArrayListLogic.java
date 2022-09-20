@@ -3,6 +3,7 @@ package arraylist;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import utility.CustomException;
@@ -29,18 +30,18 @@ public class ArrayListLogic
 	    	 
 	     }
 	     
-	     public void addTwoLists( ArrayList<Object> anotherList )
+	     public void addTwoLists( Collection<Object> collection )
 	     {
 	    	 
-	    	 actualList.addAll( anotherList );
+	    	 actualList.addAll( collection  );
 	    	 
 	     }
 	     
-	     public void addListToIndexOfAnotherList( int index , ArrayList<Object> anotherList )  
+	     public void addListToIndexOfAnotherList( int index , Collection<Object> collection )  
 	     {
 	    	
 	    	 
-	    	 actualList.addAll( index , anotherList );
+	    	 actualList.addAll( index , collection );
 	    	 
 	     }
 	     
@@ -110,17 +111,17 @@ public class ArrayListLogic
 	    	
 	     }
 	     
-	     public void removeAllObjects(  ArrayList< Object > anotherList )  
+	     public void removeAllObjects(  Collection< Object > collection )  
 	     {
 	    	 
-	    	 actualList.removeAll( anotherList );
+	    	 actualList.removeAll( collection );
 	    	 
 	     }
 	     
-	     public void retainAllObjects(  ArrayList< Object > anotherList )  
+	     public void retainAllObjects(  Collection< Object > collection )  
 	     {
 	    	 
-	    	 actualList.retainAll( anotherList );
+	    	 actualList.retainAll( collection );
 	    	 
 	     }
 	     

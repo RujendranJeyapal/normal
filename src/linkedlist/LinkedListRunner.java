@@ -10,7 +10,7 @@ import utility.Utility;
 
 public class LinkedListRunner 
 {
-	static Object getObject( Scanner input )
+	static Object getString( Scanner input )
 	{
 		System.out.println("Enter the Object(String)");
 		
@@ -133,7 +133,7 @@ public class LinkedListRunner
 		                		           
 		                		           for( int i=0;i<count;i++ )
 		                		           {
-		                		        	    array[i]= getObject( input  );
+		                		        	    array[i]= getString( input  );
 		                		           }
 		                		           
 		                		           callLogic.addToLinkedList( array );
@@ -265,7 +265,7 @@ public class LinkedListRunner
                         
                         
                             
-                              callLogic.addToLinkedListGivenPosition( index , getObject( input ) );
+                              callLogic.addToLinkedListGivenPosition( index , getString( input ) );
                 	  }
                         	  break;
                         	  
@@ -312,7 +312,7 @@ public class LinkedListRunner
                    
                    
                        
-                               System.out.println(  callLogic.set( index1 , getObject( input ) ) );  
+                               System.out.println(  callLogic.set( index1 , getString( input ) ) );  
                 	    }
                    	           break;
                         	  
@@ -521,7 +521,7 @@ public class LinkedListRunner
                    case 11:
                 	   
                 	        
-                	          int index10=callLogic.getIndexOfObject( getObject( input ) );
+                	          int index10=callLogic.getIndexOfObject( getString( input ) );
                 	          
                 	          if( index10==-1 )
                 	          {
@@ -540,7 +540,7 @@ public class LinkedListRunner
                 	   
          	                 
          	          
-         	                  int index11=callLogic.getLastIndexOfObject( getObject( input ) );
+         	                  int index11=callLogic.getLastIndexOfObject( getString( input ) );
          	          
          	                  if( index11==-1 )
          	                  {
@@ -621,7 +621,7 @@ public class LinkedListRunner
                   case 15:
                 	  
 
-                              callLogic.removeObject( getObject( input ) );
+                              callLogic.removeObject( getString( input ) );
                 	  
                 	  
                 	      
@@ -632,14 +632,14 @@ public class LinkedListRunner
                 	  
                 	      
                 	         
-                	         System.out.println( callLogic.isExist( getObject( input ) ) );
+                	         System.out.println( callLogic.isExist( getString( input ) ) );
                 	         
                 	         break; 
                 	          
                 	         
                   case 17:
                 	  
-                	         callLogic.addFirstIndex( getObject( input ) );
+                	         callLogic.addFirstIndex( getString( input ) );
                 	  
                 	  
                 	         break;
@@ -647,26 +647,26 @@ public class LinkedListRunner
                 	         
                   case 18:
                 	  
-                	         callLogic.addLastIndex( getObject( input ) );
+                	         callLogic.addLastIndex( getString( input ) );
                 	         
                 	         break;
                 	         
                 	         
                   case 19:
                 	  
-                	         System.out.println( callLogic.offer(  getObject( input ) ) );
+                	         System.out.println( callLogic.offer(  getString( input ) ) );
                 	         
                 	         break;
                 	         
                   case 20:
                 	  
-                	         System.out.println( callLogic.offerFirst( getObject( input ) ) );
+                	         System.out.println( callLogic.offerFirst( getString( input ) ) );
                 	  
                 	         break;
                 	         
                   case 21:
                 	    
-                	         System.out.println( callLogic.offerLast( getObject( input ) ) );
+                	         System.out.println( callLogic.offerLast( getString( input ) ) );
                 	  
                 	         break;
                 	         
@@ -826,7 +826,7 @@ public class LinkedListRunner
                  case 31:
                 	 
                 	 
-                	          System.out.println( callLogic.removeFirstOccurence(  getObject( input ) ) );
+                	          System.out.println( callLogic.removeFirstOccurence(  getString( input ) ) );
                 	          
                 	          break;
                      
@@ -834,7 +834,7 @@ public class LinkedListRunner
                  case 32:
                 	 
                 	 
-       	                     System.out.println( callLogic.removeLastOccurence(  getObject( input ) ) );
+       	                     System.out.println( callLogic.removeLastOccurence(  getString( input ) ) );
        	          
        	                     break;          
                               

@@ -12,7 +12,7 @@ public class ArrayListRunner
 {
 	
 	
-	static Object getObject( Scanner input )
+	static Object getString( Scanner input )
 	{
 		System.out.println("Enter the Object(String)");
 		
@@ -116,7 +116,7 @@ public class ArrayListRunner
         		                		           
         		                		           for( int i=0;i<count;i++ )
         		                		           {
-        		                		        	    array[i]= getObject( input  );
+        		                		        	    array[i]= getString( input  );
         		                		           }
         		                		           
         		                		           callLogic.addToArrayList( array );
@@ -243,7 +243,7 @@ public class ArrayListRunner
                                 
                                 
                                     
-                                      callLogic.addToArrayListGivenPosition( index , getObject( input ) );
+                                      callLogic.addToArrayListGivenPosition( index , getString( input ) );
                         	  }
                                 	  break;
                                 	  
@@ -455,7 +455,7 @@ public class ArrayListRunner
                            case 10:
                         	   
                         	        
-                        	          int index10=callLogic.getIndexOfObject( getObject( input ) );
+                        	          int index10=callLogic.getIndexOfObject( getString( input ) );
                         	          
                         	          if( index10==-1 )
                         	          {
@@ -474,7 +474,7 @@ public class ArrayListRunner
                         	   
                  	                 
                  	          
-                 	                  int index11=callLogic.getLastIndexOfObject( getObject( input ) );
+                 	                  int index11=callLogic.getLastIndexOfObject( getString( input ) );
                  	          
                  	                  if( index11==-1 )
                  	                  {
@@ -552,7 +552,7 @@ public class ArrayListRunner
                           case 14:
                         	  
 
-                                      callLogic.removeObject( getObject( input ) );
+                                      callLogic.removeObject( getString( input ) );
                         	  
                         	  
                         	      
@@ -563,7 +563,7 @@ public class ArrayListRunner
                         	  
                         	      
                         	         
-                        	         System.out.println( callLogic.isExist( getObject( input ) ) );
+                        	         System.out.println( callLogic.isExist( getString( input ) ) );
                         	         
                         	         break; 
                         	          

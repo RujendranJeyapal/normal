@@ -11,7 +11,7 @@ public class HashMapRunner
 {
 	
 	
-	static Object getObject( Scanner input , String type )
+	static Object getString( Scanner input , String type )
 	{
 		System.out.println("Enter the "+type+" (String)");
 		
@@ -200,7 +200,7 @@ public class HashMapRunner
 		          	    	            	      
 		          	    	            	    
 		         
-		          	    	            	      callLogic.addToHashMap( getObject( input , "key" ) , getObject( input , "value" ) );
+		          	    	            	      callLogic.addToHashMap( getString( input , "key" ) , getString( input , "value" ) );
 		          	    	            	   
 		          	    	               }
 		          	    	                
@@ -263,7 +263,7 @@ public class HashMapRunner
 
 	          	    	            	  
 
-	          	    	            	   callLogic.addToHashMap( key , getObject( input , "value" ) );
+	          	    	            	   callLogic.addToHashMap( key , getString( input , "value" ) );
 	          	    	            	   
 	          	    	               }
 	          	    	                
@@ -305,7 +305,7 @@ public class HashMapRunner
 	          	    	            	   
 	          	    	            	   
 	          	    	            	      
-	          	    	            	   Object key=getObject( input , "key" );
+	          	    	            	   Object key=getString( input , "key" );
 	          	    	            	   
 	          	    	            	   while( true )
 	          	    	            	   {
@@ -352,7 +352,7 @@ public class HashMapRunner
 		          	 case 5:
 		          		
                                     
-                                          callLogic.addToHashMap( null , getObject( input , "value" ) );
+                                          callLogic.addToHashMap( null , getString( input , "value" ) );
 	          	     
                                           break;
 	          	        
@@ -377,7 +377,7 @@ public class HashMapRunner
 		          		                	    
 		          		               
 		          		                	     
-		          		                	     callLogic.addToHashMap( getObject( input , "key" ) , null );
+		          		                	     callLogic.addToHashMap( getString( input , "key" ) , null );
 		          		                	   
 		          		                   }
 		          		                   
@@ -401,7 +401,7 @@ public class HashMapRunner
 		          	 case 7:
 		          		                
 		          		                   
-		          		                   callLogic.addToAbsentKey( getObject( input , "key" ) , getObject( input , "value" ) );
+		          		                   callLogic.addToAbsentKey( getString( input , "key" ) , getString( input , "value" ) );
 		          		 
 		          		                   break;
 		          	      
@@ -409,7 +409,7 @@ public class HashMapRunner
 		          		 
 		          		                  
 		          		                   
-		          		                   System.out.println( callLogic.isKeyExistInHashMap( getObject( input , "key" ) ) );
+		          		                   System.out.println( callLogic.isKeyExistInHashMap( getString( input , "key" ) ) );
 		          		                   
 		          		                   break;
 		          		                   
@@ -417,7 +417,7 @@ public class HashMapRunner
 		          		 
 		          		                  
 		          		                   
-		          		                   System.out.println( callLogic.isValueExistInHashMap( getObject( input , "value" ) ) );
+		          		                   System.out.println( callLogic.isValueExistInHashMap( getString( input , "value" ) ) );
 		          		                   
 		          		                   break;
 		          		
@@ -425,7 +425,7 @@ public class HashMapRunner
 		          		                   
 		          		                 
 		          		                   
-		          		                   System.out.println( callLogic.getValueFromKey( getObject( input , "key" ) ) );
+		          		                   System.out.println( callLogic.getValueFromKey( getString( input , "key" ) ) );
 		          		                   
 		          		                   break;
 		          		 
@@ -433,7 +433,7 @@ public class HashMapRunner
 		          		 	          		                 
 		          		                   
 		          		                   System.out.println( callLogic.getValueIfKeyIsAbsent( 
-		          		                		   getObject( input , "key" ) , getObject( input , "default value" ) ) );
+		          		                		   getString( input , "key" ) , getString( input , "default value" ) ) );
 		          		                   
 		          		                   break;
 		          		 
@@ -441,14 +441,14 @@ public class HashMapRunner
 		          	 case 12:
 
 		                                   
-		                                   callLogic.removeKey( getObject( input , "key" ) );
+		                                   callLogic.removeKey( getString( input , "key" ) );
 		          		 
 		          		                   break;
 		          		  
 		          	 case 13:	                   
 
 		          		                   
-		          		                   callLogic.removeKeyIfValueMatch( getObject( input , "key" ) , getObject( input , "value" ) );
+		          		                   callLogic.removeKeyIfValueMatch( getString( input , "key" ) , getString( input , "value" ) );
 		          		                   
 		          		                   
 		          		                   break;
@@ -457,7 +457,7 @@ public class HashMapRunner
 		          		 
 
 		          		                   
-		          		                   callLogic.replaceValue( getObject( input , "key" ) , getObject( input , "value" ) );
+		          		                   callLogic.replaceValue( getString( input , "key" ) , getString( input , "value" ) );
 		          		                   
 		          		                   break;
 		          		                   
@@ -465,8 +465,8 @@ public class HashMapRunner
 		          		 
 		          		                 
 		          		                   
-		          		                   callLogic.replaceThisValue( getObject( input , "key" ) , 
-		          		                		 getObject( input , "old value" ), getObject( input , "new value" ) );
+		          		                   callLogic.replaceThisValue( getString( input , "key" ) , 
+		          		                		 getString( input , "old value" ), getString( input , "new value" ) );
 		          		                   
 		          		                   break;
 		          		
